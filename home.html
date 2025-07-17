@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla Visible - Belluccia 3</title>
+
+    <!-- Tipografía desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+
+
+    <!-- Framework CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR: Menú de navegación fijo superior -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Logo o nombre del sitio -->
+    <a class="navbar-brand" href="#">
+      <img src="Images/PequePlan_Logo.png" alt="Logo" style="height: 40px;">
+   </a>
+    <!-- Botón para mostrar menú en mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Ítems del menú -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Como Funciona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Suscripciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Kits</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">PequeSwap</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- /NAVBAR -->
+
+<!-- HERO: Sección de portada con llamado a la acción -->
+<section class="text-center text-white bg-cover d-flex align-items-center hero-no-bottom-padding" style="background-image: url('Images/Hero-Background.png'); background-position: top center;">
+  <div class="container hero-container-content">
+    <h1 class="h1-custom hero-title text-white mb-3">Un kit, mil universos<br>por descubrir</h1>
+    <p class="lead-custom text-white mb-4">Explorá un universo de actividades didácticas diseñadas <br>para potenciar la creatividad de las infancias.</p>
+    <a href="#" class="btn btn-primary mt-3">VIAJÁ CON NOSOTROS</a>
+    
+    <!-- Imagen decorativa abajo (puede ser gif) -->
+    <div class="mt-1">
+      <img src="Images/Hero-Animation.gif" alt="Hero-Gif" class="img-fluid" style="max-height: 500px;">
+    </div>
+  </div>
+</section>
+  
+<!-- /HERO -->
+  
+  <!-- COMO FUNCIONA: Items de como funciona -->
+<section class="section-spacing container text-center">
+   <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">TU MISION EN 3 PASOS</p>
+  <h2 class="mb-5 fw-bold">¿Cómo funciona PequePlan?</h2>
+  <div class="row mt-5">
+    <!-- Cada columna es un integrante -->
+    <div class="col-md-4 mb-4">
+      <img src="Images/Como-Funciona_Icono-01.png" class="mb-3 como-funciona-icono" alt="Buscá tu plan ideal">
+      <h5>01 Buscá tu plan ideal</h5>
+      <p class="p-custom">Mensual, trimestral o anual: todos te llevan a nuevos universos creativos.</p>
+    </div>
+    <!-- Cada columna es un integrante -->
+    <div class="col-md-4 mb-4">
+      <img src="Images/Como-Funciona_Icono-02.png" class="mb-3 como-funciona-icono" alt="Recibí tu PequeCaja">
+      <h5>02 Recibí tu PequeCaja</h5>
+      <p class="p-custom">La cápsula creativa aterriza en casa y trae todo lo necesario para explorar.</p>
+    </div>
+    <!-- Cada columna es un integrante -->
+    <div class="col-md-4 mb-4">
+      <img src="Images/Como-Funciona_Icono-03.png" class="mb-3 como-funciona-icono" alt="Usá PequeSwap">
+      <h5>03 Usá PequeSwap</h5>
+      <p class="p-custom">Canjeá kits por nuevos en librerías y jugueterías educativas. </p>
+    </div>
+  </div>
+</section>
+<!-- /TEAM -->
+
+  
+ <!-- SECCIÓN B: Imagen izquierda, texto derecha -->
+<section class="section-spacing container">
+  <div class="row align-items-center">
+    <!-- Columna de imagen -->
+    <div class="col-lg-6 text-center mb-4 mb-lg-0">
+      <img src="Images/Mockup-USo.png" class="img-fluid img-rounded" alt="Imagen ilustrativa">
+    </div>
+    <!-- Columna de texto -->
+    <div class="col-lg-6">
+      <!-- IZQUIERDA -->
+     <div class="col-md- text-start">
+       <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">SOBRE NOSOTROS</p>
+       <h2 class="h2-custom">Creamos experiencias que inspiran a jugar y explorar</h2>
+       <p class="lead-custom">Nuestro objetivo es transformar el juego en una experiencia consciente, creativa y memorable.</p>
+      <div class="row mt-5">
+          <div class="col-md-4 text-start">
+           <p class="ttext-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">KITS ENTREGADOS</p>
+           <h4 class="h4-custom text-bold">+8.000</h4>
+          </div>
+        <div class="col-md-4 text-start">
+         <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">FAMILIAS A BORDO</p>
+         <h4 class="h4-custom text-bold">+2.500</h4>
+        </div>
+        <div class="col-md-4 text-start">
+          <p class="text-uppercase text-muted mb-1 font-inconsolata">RATING</p>
+         <h4 class="h4-custom text-bold">99,2%</h4>
+        </div>
+      </div>  
+     </div>
+    </div>
+  </div>
+</section>
+ 
+
+
+<!-- PLANES DE SUSCRIPCIÓN: Sección con 3 opciones destacadas -->
+<div class="bg-cover" style="background-image: url(Images/Suscripcion+Kits-Background.png);">
+<section class="section-spacing text-center">
+  <p class="text-uppercase text-white mb-1 font-inconsolata" style="letter-spacing: 1px;">SUSCRIPCIONES</p>
+  <h2 class="h2-custom text-white">Elegí tu ruta estelar</h2>
+  <p class="p-custom text-white">Tres planes para explorar el universo PequePlan a tu ritmo, sin pantallas y con mucha creatividad.</p>
+  <div class="row mt-5">
+    
+  <!-- Card: Plan Básico -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100">
+        <!-- Título y precio -->
+        <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">UNICA VEZ</p>
+        <h5 class="text-uppercase plan-title-custom">Plan Chispa </h5>
+        <p class="display-6 text-dark text-bol">$25.000 <small>/ mes</small></p>
+        
+        <!-- Imagen ilustrativa -->
+        <img src="Images/Caja-con-fondo_Chispa.png" class="img-fluid img-rounded my-3" alt="Plan Básico">
+
+  
+        
+        <!-- Lista de beneficios -->
+        <ul class="list-unstyled text-start mx-auto plan-benefits-list" style="max-width: 250px;">
+          <li><i class="bi bi-check-circle-fill"></i> Llega dentro de las 48hs</li>
+          <li><i class="bi bi-check-circle-fill"></i> 1 PequeCaja a elección</li>
+          <li><i class="bi bi-check-circle-fill"></i> Guía para adultos</li>
+        </ul>
+
+        <!-- Botón CTA -->
+        <a href="#" class="btn btn-primary mt-3">¡QUIERO EMPEZAR!</a>
+      </div>
+    </div>
+
+    <!-- Card: Plan Pro (Recomendado) -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100  border-primary">
+        <!-- Título y precio -->
+<p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">6 MESES</p>
+        <h5 class="text-uppercase plan-title-custom">Plan Lumen</h5>
+         <p class="display-6 text-dark">$35.000 <small>/ mes</small></p>
+        
+        <!-- Imagen ilustrativa -->
+        <img src="Images/Caja-con-fondo_Lumen.png" class="img-fluid img-rounded my-3" alt="Plan Pro">
+
+
+        
+        <!-- Lista de beneficios -->
+        <ul class="list-unstyled text-start mx-auto plan-benefits-list" style="max-width: 250px;">
+          <li> <i class="bi bi-check-circle-fill"></i> Llegan el 1ero de cada mes</li>
+          <li><i class="bi bi-check-circle-fill"></i> 1 PequeCaja a elección</li>
+          <li><i class="bi bi-check-circle-fill"></i> Guías + Videos para adultos</li>
+          <li class="text-bold"><i class="bi bi-gift-fill"></i> Regalo sorpresa mensual </li>
+    
+        </ul>
+
+        <!-- Botón CTA -->
+        <a href="#" class="btn btn-primary mt-3">¡VAMOS POR MÁS!</a>
+      </div>
+    </div>
+
+    <!-- Card: Plan Full -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100">
+        <!-- Título y precio -->
+        <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">12 MESES</p>
+        <h5 class="text-uppercase plan-title-custom">Plan Prisma </h5>       
+        <p class="display-6 text-dark">$45.000 <small>/ mes</small></p>
+        
+        <!-- Imagen ilustrativa -->
+        <img src="Images/Caja-con-fondo_Prisma.png" class="img-fluid img-rounded my-3" alt="Plan Full">
+
+        
+        <!-- Lista de beneficios -->
+        <ul class="list-unstyled text-start mx-auto plan-benefits-list" style="max-width: 260px;">
+          <li><i class="bi bi-check-circle-fill"></i> Todo lo del plan Lumen</li>
+          <li class="text-bold"><i class="bi bi-gift-fill"></i> Regalo sorpresa mensual </li>
+
+          <li class="text-bold"><i class="bi bi-clock-fill"></i> Acceso anticipado a kits </li>
+          <li class="text-bold"><i class="bi bi-tag-fill"></i> 10% off en tiendas educativas</li>
+        </ul>
+
+
+        <!-- Botón CTA -->
+        <a href="#" class="btn btn-primary mt-3">¡DESPEGUEMOS!</a>
+      </div>
+    </div>
+
+  </div>
+</section>  
+  
+  
+<!-- Sección PequeUniversos -->
+<section class="pequeniversos-section">
+    <div class="pequeniversos-container">
+        <div class="pequeniversos-header">
+           <p class="text-uppercase text-white mb-1 font-inconsolata" style="letter-spacing: 1px;">LOS KITS</p>
+            <h2>Conoce los PequeUniversos</h2>
+            <p>Cada universo te invita a descubrir una nueva habilidad a través del juego y la creatividad. </p>
+        </div>
+
+        <div class="pequeniversos-tabs">
+            <div class="tabs-header">
+                <button class="tab-button active creador" onclick="showTab('creador')">Universo Creador</button>
+                <button class="tab-button cientifico" onclick="showTab('cientifico')">Universo Científico</button>
+                <button class="tab-button verde" onclick="showTab('verde')">Universo Verde</button>
+                <button class="tab-button gourmet" onclick="showTab('gourmet')">Universo Gourmet</button>
+            </div>
+
+            <div id="creador" class="tab-content active">
+                <div class="universe-content">
+                    <div class="universe-info">
+                        <h5 class="text plan-title-custom">Universo Creador </h5>
+                        <p>Colores, texturas y materiales para dar vida a ideas que viajan más allá de la imaginación</p>
+                        <ul class="universe-features">
+                            <li>• Pinturas, acuarelas y pinceles</li>
+                            <li>• Hilos y telas</li>
+                            <li>• Actividades paso a paso para experimentar distintas técnicas</li>
+                            <li>• Mini guía visual con referencia artísticas</li>
+                        </ul>
+                           <a href="#" class="btn btn-primary mt-3">EXPLORA ESTE UNIVERSO</a>
+                    </div>
+                    <div class="universe-image">
+                        <img src="Images/Universo%20Artistico.png" alt="Universo Creador">
+                    </div>
+                </div>
+            </div>
+
+            <div id="cientifico" class="tab-content">
+                <div class="universe-content">
+                    <div class="universe-info">
+                        <h5 class=" plan-title-custom">Universo Científico</h5>
+                        <p>Un laboratorio en miniatura para experimentar, mezclar y sorprenderse con cada nuevo hallazgo</p>
+                        <ul class="universe-features">
+                            <li>• Antiparras de seguridad y guantes</li>
+                            <li>• Lupa, regla y otro elementos</li>
+                            <li>• Cucharas medidoras y frascos con materiales</li>
+                            <li>• Tubos de ensayo</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">EXPLORA ESTE UNIVERSO</a>
+                    </div>
+                    <div class="universe-image">
+                        <img src="Images/Universo-Cientifico.png" alt="Universo Científico">
+                    </div>
+                </div>
+            </div>
+
+            <div id="verde" class="tab-content">
+                <div class="universe-content">
+                    <div class="universe-info">
+                        <h5 class=" plan-title-custom">Universo Verde</h5>
+                        <p>Una aventura botánica para sembrar, cuidar y ver crecer nuevas formas de vida desde casa</p>
+                        <ul class="universe-features">
+                            <li>• Bolso de Jardineria</li>
+                            <li>• Guías sobre plantas y ecosistemas</li>
+                            <li>• Semillas y materiales de jardinería</li>
+                            <li>• Actividades de compostaje y reciclaje</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">EXPLORA ESTE UNIVERSO</a>
+                    </div>
+                    <div class="universe-image">
+                        <img src="images/Universo-verde.png" alt="Universo Verde">
+                    </div>
+                </div>
+            </div>
+
+            <div id="gourmet" class="tab-content">
+                <div class="universe-content">
+                    <div class="universe-info">
+                        <h5 class="plan-title-custom">Universo Gourmet </h5>
+                        <p>Una misión deliciosa para cocineros curiosos que se animan a batir, cortar y decorar.</p>
+                        <ul class="universe-features">
+                            <li>• Delantal y guante de cocina PequePlan</li>
+                            <li>• Cortantes y moldes</li>
+                            <li>• Espatula y Batidor </li>
+                            <li>• Recetarios y videos paso a paso</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">EXPLORA ESTE UNIVERSO</a>
+                    </div>
+                    <div class="universe-image">
+                        <img src="images/Universo-Gourmet.png" alt="Universo Gourmet">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function showTab(tabId) {
+    // Ocultar todos los contenidos
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+    
+    // Desactivar todos los botones
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(button => button.classList.remove('active'));
+    
+    // Mostrar el contenido seleccionado
+    document.getElementById(tabId).classList.add('active');
+    
+    // Activar el botón correspondiente
+    document.querySelector(`.tab-button.${tabId}`).classList.add('active');
+}
+
+// Inicializar animación cuando se carga la sección
+document.addEventListener('DOMContentLoaded', function() {
+    const tabsContainer = document.querySelector('.pequeniversos-tabs');
+    if (tabsContainer) {
+        tabsContainer.style.opacity = '0';
+        tabsContainer.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            tabsContainer.style.transition = 'all 0.6s ease';
+            tabsContainer.style.opacity = '1';
+            tabsContainer.style.transform = 'translateY(0)';
+        }, 100);
+    }
+});
+</script>  
+</div>
+  
+  
+<!-- PEQUESWAP -->
+<section class="section-spacing container text-center">
+    <p class="text-uppercase text-muted mb-1 font-inconsolata" style="letter-spacing: 1px;">sobre pequeswap</p>
+  <h2 class="h2-custom mb-5">¿Cómo funciona PequeSwap?</h2>
+  <div class="row justify-content-center"> <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class="card h-100 p-4">
+        <h3 class="display-4 text-dark fw-bold mb-3 font-inconsolata">01</h3>
+        <p class="h5 mb-3">Viví la misión en casa</p> <p class="p-custom">Una vez que hayan jugado, creado y aprendido, ¡la misión está cumplida y lista para rotar!</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class="card h-100 p-4">
+        <h3 class="display-4 text-dark fw-bold mb-3 font-inconsolata">02</h3>
+        <p class="h5 mb-3">Prepará tu kit para el despegue</p>
+        <p class="p-custom">Guardá los materiales en buen estado. ¡Listo para su próximo viaje!</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class="card h-100 p-4">
+        <h3 class="display-4 text-dark fw-bold mb-3 font-inconsolata">03</h3>
+        <p class="h5 mb-3">Entregalo en un punto aliado</p>
+        <p class="p-custom">Devolvelo en alguna de nuestras librerías o jugueterías educativas</p>
+        <a href="#" class="btn btn-primary mt-auto">VER PUNTOS CERCANOS</a> </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class="card h-100 p-4">
+        <h3 class="display-4 text-dark fw-bold mb-3 font-inconsolata">04</h3>
+        <p class="h5 mb-3">Elegí uno nuevo</p>
+        <p class="p-custom">Canjealo por un kit diferente con nuevas actividades para seguir jugando.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- /PEQUESWAP -->
+  
+  
+<!-- MARCAS ASOCIADAS -->
+<section class="section-spacing container-fluid text-center brand-slider-section">
+
+  <div class="brand-slider-container">
+    <div class="brand-slider">
+      <img src="Images/educar-portal-logo.png" alt="Educar Portal">
+      <img src="Images/fundacion-arcor-logo.png" alt="Fundación Arcor">
+      <img src="Images/kumon-logo.png" alt="Kumon">
+      <img src="Images/maped-logo.png" alt="Maped">
+      <img src="Images/faber-castell-logo.png" alt="Faber Castell">
+      
+      <img src="Images/educar-portal-logo.png" alt="Educar Portal">
+      <img src="Images/fundacion-arcor-logo.png" alt="Fundación Arcor">
+      <img src="Images/kumon-logo.png" alt="Kumon">
+      <img src="Images/maped-logo.png" alt="Maped">
+      <img src="Images/faber-castell-logo.png" alt="Faber Castell">
+
+    
+    </div>
+  </div>
+</section>  
+<!-- /MARCAS ASOCIADAS --> 
+ <!-- GALERÍA B: Masonry layout con column-count (hay controles en el css)-->
+<section class="section-spacing container py-5">
+  <h2 class="h2-custom">Nuestros Peques</h2>
+  
+  <div class="masonry__container">
+    <img class="masonry__item" src="Images/Reviews-01.png" alt="Imagen 1">
+    <img class="masonry__item" src="Images/Reviews-02.png" alt="Imagen 2">
+    <img class="masonry__item" src="Images/Reviews-03.png" alt="Imagen 3">
+    <img class="masonry__item" src="Images/Reviews-04.png" alt="Imagen 4">
+    <img class="masonry__item" src="Images/Reviews-05.png" alt="Imagen 5">
+    <img class="masonry__item" src="Images/Reviews-06.png" alt="Imagen 6">
+    <img class="masonry__item" src="Images/Reviews-07.png" alt="Imagen 7">
+    <img class="masonry__item" src="Images/Reviews-09.png" alt="Imagen 8">
+  </div>
+</section>
+  
+<!-- TESTIMONIALS: Opiniones de clientes -->
+<section class="section-spacing container text-center">
+  <p class="p-custom">REVIEWS</p>
+  <h2 class="h2-custom">Lo dicen desde todas las galaxias...</h2>
+  <div class="row">
+    <!-- Cada columna es un testimonio -->
+<div class="col-md-4">
+  <div class="card p-4 border-0 shadow-sm h-100 text-center">
+    <!-- Imagen del cliente -->
+    <img src="images/Testimonio-Icono-01-8.png" alt="Foto cliente" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+
+    <!-- Nombre -->
+    <h5 class="mb-1">MAMÁ DE UMA</h5>
+
+    <!-- Estrellas -->
+    <div class="mb-2 text-warning">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+    </div>
+    <!-- Comentario -->
+    <p class="p-custom">“Me llegó la caja a tiempo, impecable todo. ¡Una sorpresa genial todos los meses!”</p>
+  </div>
+</div>
+    
+    <!-- Cada columna es un testimonio -->
+<div class="col-md-4">
+  <div class="card p-4 border-0 shadow-sm h-100 text-center">
+    <!-- Imagen del cliente -->
+    <img src="images/Testimonio-Icono-02-8.png" alt="Foto cliente" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+
+    <!-- Nombre -->
+    <h5 class="mb-1">PAPÁ DE LEO</h5>
+
+    <!-- Estrellas -->
+    <div class="mb-2 text-warning">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star"></i>
+    </div>
+    <!-- Comentario -->
+    <p class="p-custom">“El juega, yo lo acompaño, y es tiempo de calidad de verdad. Gracias por ayudarnos a bajar a la Tierra.”</p>
+  </div>
+</div>
+    <!-- Cada columna es un testimonio -->
+<div class="col-md-4">
+  <div class="card p-4 border-0 shadow-sm h-100 text-center">
+    <!-- Imagen del cliente -->
+    <img src="images/Testimonio-Icono-03-8.png" alt="Foto cliente" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+
+    <!-- Nombre -->
+    <h5 class="mb-1">MAMÁ DE MICA</h5>
+
+    <!-- Estrellas -->
+    <div class="mb-2 text-warning">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star"></i>
+    </div>
+    <!-- Comentario -->
+    <p class="p-custom">“Gracias a PequePlan, mi hija descubrió su amor por la cocina. Es una propuesta educativa muy bien pensada.”</p>
+  </div>
+</div>
+  </div>
+</section>
+<!-- /TESTIMONIALS --> 
+  
+<section class="section-spacing text-center faqs-section"> 
+    <div class="container"> 
+        <p class="p-custom font inconsolata text-black">F.A.Q</p>
+        <h2 class="h2-custom">Preguntas Frecuentes</h2>
+        <div class="accordion mt-5" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header  text-bold" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"> /01 ¿Cuándo se envía mi caja?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Las cajas se despachan entre 24 y 48 hs hábiles después de confirmar tu suscripción o compra. Vas a recibir un mail con el seguimiento.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"> /02 ¿Puedo regalar una caja?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        ¡Sí! Podés elegir el plan que más te guste y enviarlo como regalo a otra persona.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"> /03 ¿Para qué edades es PequePlan?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Está pensado para chicos de entre 3 y 8 años. Las actividades se adaptan al ritmo y curiosidad de cada edad.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"> /04 ¿Hay compromisos o puedo cancelar?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        No hay ningún compromiso. Podés pausar o cancelar la suscripción en cualquier momento desde tu cuenta.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"> /05 ¿Qué tan seguras son las actividades?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Muy seguras. Usamos materiales no tóxicos, resistentes y aptos para uso infantil. 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="p-custom text-black mt-5">¿Tenés más preguntas? ¿Necesitás ayuda con tu cuenta?</p>
+        <p class="p-custom text-black">Visitá nuestro <a href="#">Centro de Ayuda</a>.</p>
+    </div> </section>
+
+
+
+<!-- FOOTER: Pie de página -->
+<footer class="site-footer py-5 ">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 text-center text-md-start">
+        <img src="Images/PequePlan_Logo.png" alt="Logo Peque Plan" class="footer-logo mb-3">
+        <p class="footer-text mb-3">
+          Explorá el universo PequePlan,
+          <br>sin pantallas y con mucha creatividad.
+        </p>
+        
+        <form class="footer-newsletter mb-4">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email para novedades..." aria-label="Email para novedades">
+          </div>
+        </form>
+
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+<div class="col-lg-2 offset-lg-1 col-md-4 col-sm-6 mb-3 mb-lg-0">
+        <h5 class="footer-heading">Secciones</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Como Funciona</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Suscripciones</a></li>
+          <li><a href="#">Kits</a></li>
+          <li><a href="#">PequeSwap</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-3 mb-lg-0">
+        <h5 class="footer-heading">Más Pequeplan</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">PequeShop</a></li>
+          <li><a href="#">PequeSwap</a></li>
+          <li><a href="#">Tiendas asociadas</a></li>
+          <li><a href="#">Nuestros locales</a></li>
+          <li><a href="#">Descuentos</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-3 mb-lg-0">
+        <h5 class="footer-heading">Ayuda</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Atención al Cliente</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+
+    </div> <hr class="footer-divider my-5">
+
+    <div class="row footer-bottom-row">
+      <div class="col-lg-6 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
+        <p class="footer-info">Pabellón 3, Av. Costanera 2160 C1428EQA<br>Buenos Aires</p>
+      </div>
+      <div class="col-lg-6 col-md-12 text-center text-lg-end">
+        <p class="footer-info">© 2025 Victoria Morán Cátedra Belluccia DG3</p>
+      </div>
+    </div>
+
+  </div> </footer>
+<!-- /FOOTER -->
+
+<!-- Bootstrap Bundle JS (incluye Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+<!-- Script personalizado para cambiar el navbar al hacer scroll -->
+<script>
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+
+<!-- Scripts adicionales -->
+<script src="scripts.js"></script>
+</body>
+</html>

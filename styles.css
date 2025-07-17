@@ -1,0 +1,1212 @@
+/* 1. VARIABLES DE DISEÑO */
+:root {
+  --primary-color: #2B2B2B;
+  --secondary-color: #6c757d;
+  --light-color: #F8F4E9;
+  --dark-color: #2B2B2B;
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-hero: 'Barriecito', sans-serif;
+  --font-subtitles: 'Inconsolata', sans-serif;
+  --yellow-button-color: #FADB79; 
+  
+}
+
+.icon-beneficio {
+  color: #FADB79; /* rosa */
+}
+
+/* 2. ESTILOS GENERALES */
+body {
+  font-family: var(--font-family-base);
+  color: #212529;
+  background-color: #F8F4E9;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* 3. NAVBAR */
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 15px 0;
+}
+
+.navbar.scrolled {
+  background-color: #2B2B2B;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--dark-color); /* Por defecto, será oscuro cuando hay scroll */
+}
+
+/* Color por defecto de los nav-links (cuando el navbar tiene scroll) */
+.nav-link {
+  color: #CCCCCC; /* Nuevo: Gris claro para enlaces inactivos con scroll */
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+/* Color de hover para todos los nav-links */
+.nav-link:hover {
+  color: #E6CA71;
+}
+
+/* Colores para navbar transparente (sin scroll) */
+.navbar:not(.scrolled) .nav-link {
+  color: #FFFFFF; /* Blanco para enlaces inactivos sin scroll */
+}
+
+.navbar:not(.scrolled) .navbar-brand {
+  color: #FFFFFF; /* Blanco para el brand sin scroll */
+}
+
+
+/* Color de hover para navbar transparente (sin scroll) - YA LO TENÍAS, PERO LO REAFIRMO */
+.navbar:not(.scrolled) .nav-link:hover,
+.navbar:not(.scrolled) .navbar-brand:hover {
+  color: #E6CA71;
+}
+
+/* Color para el elemento activo (seleccionado) en ambos estados del navbar */
+.nav-link.active {
+  color: #E6CA71 !important; /* Usamos !important para asegurar que tenga prioridad */
+  /* Puedes añadir otros estilos para destacarlo más, por ejemplo: */
+  /* border-bottom: 2px solid #E6CA71; */
+  /* padding-bottom: 5px; */
+}
+
+/* Asegura que el color activo se mantenga cuando el navbar está scrolleado */
+.navbar.scrolled .nav-link.active {
+    color: #E6CA71 !important; /* También con !important por si acaso */
+}
+
+
+/* 4. HERO */
+.hero-title {
+  font-family: var(--font-hero);
+  font-weight: 400 !important;
+  font-size: 4.2rem !important; /* Tamaño de fuente para el hero-title en pantallas grandes */
+  color: white !important; /* Para asegurar que sea blanco */
+}
+
+.hero-container-content {
+  padding-top: 40px; /* Ajusta este valor según lo necesites (ej. 120px, 150px, 200px) */
+  /* Esto empujará el contenido hacia abajo desde la parte superior del hero */
+}
+
+.row.p-5 {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { /* Esta regla se mantiene para otros h1 que no sean hero-title */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+
+
+
+/* Botones */
+/* Botones */
+.btn {
+  padding: 10px 30px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-dark {
+  background-color: var(--primary-color); /* Mantienes este azul para btn-dark */
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #efb600;
+}
+
+/* MODIFICA ESTO: btn-primary ahora será amarillo */
+.btn-primary {
+  background-color: var(--yellow-button-color); /* Usa la nueva variable de color */
+  border-color: var(--yellow-button-color); /* El borde también amarillo */
+  color: var(--dark-color); /* Texto oscuro para que contraste con el amarillo */
+}
+
+.btn-primary:hover {
+  background-color: #E7B927; /* **Este es el color actual de hover.** Puedes cambiarlo. */
+  color: var(--dark-color); /* El color del texto en hover. Puedes cambiarlo a white si quieres. */
+}
+
+/* Si tienes btn-outline-primary y quieres que su borde sea amarillo */
+.btn-outline-dark { /* Esto debería llamarse btn-outline-primary si quieres que use los colores primarios */
+  border: 2px solid var(--primary-color); /* Actualmente usa tu primary-color (azul) */
+  color: var(--primary-color);
+}
+/* Si quieres un btn-outline-primary AMARILLO, necesitarías una nueva regla o modificar esta */
+/* Ejemplo de un btn-outline-primary amarillo: */
+/*
+.btn-outline-primary-yellow {
+  border: 2px solid var(--yellow-button-color);
+  color: var(--yellow-button-color);
+}
+.btn-outline-primary-yellow:hover {
+  background-color: var(--yellow-button-color);
+  color: white;
+}
+*/
+
+/* 5. SECCIONES */
+section {
+  padding: 100px 0;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/*
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 20px auto 0;
+}
+
+/* 6. CARDS */
+.card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  max-width: 400px; /* <--- AÑADE ESTA LÍNEA: Ajusta este valor (ej. 300px, 350px) */
+  margin-left: auto;   /* <--- AÑADE ESTA LÍNEA: Centra la tarjeta horizontalmente */
+  margin-right: auto;  /* <--- AÑADE ESTA LÍNEA: Centra la tarjeta horizontalmente */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Nuevos estilos específicos para las cards de los planes */
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Esto es crucial si el contenedor padre es flex y quieres que se estiren */
+}
+
+/* Mantén tus estilos generales de .card como están, si aplican a todas las cards del sitio */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    /* max-width: 400px; /* Si esto no es para los planes, muévelo a una clase específica si es necesario */
+    /* margin-left: auto; */ /* Ídem */
+    /* margin-right: auto; */ /* Ídem */
+}
+
+
+/* Efecto hover para las imágenes de los planes */
+.plan-image-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Asegura la transición */
+}
+
+.plan-image-hover:hover {
+  transform: scale(1.05); /* Escala la imagen ligeramente */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Añade una sombra sutil */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.masonry__container {
+  column-count: 4;
+  column-gap: 1rem;
+}
+
+.masonry__item {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* Añade esta nueva clase en tu styles.css */
+.plan-title-custom {
+  font-size: 1.8rem; /* Puedes ajustar este valor: prueba con 1.5rem, 2rem, etc. */
+  font-weight: 700; /* Puedes hacerlos más bold si lo deseas */
+  margin-bottom: 10px; /* Un poco de espacio debajo del título */
+}
+
+/* 7. TESTIMONIOS */
+.blockquote {
+  background-color: var(--light-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* 8. FORMULARIO */
+
+/* 9. FOOTER */
+footer {
+  background-color: var(--dark-color);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* 10. IMÁGENES */
+img.rounded-circle {
+  border: none;
+}
+
+/* 11. GALERÍA */
+.container .row img {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container .row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Cómo Funciona */
+.como-funciona-icono {
+    width: 100px; /* Tamaño que quieres para el icono */
+    height: auto;
+    border: none;
+    padding: 0;
+    border-radius: 0 !important; /* Asegura que no haya redondez del CSS */
+    transition: transform 0.3s ease-in-out; /* Solo transicionamos el transform */
+}
+
+.como-funciona-icono:hover { /* Esta es la regla que faltaba y que ahora anulará la sombra */
+    transform: translateY(-5px); /* Efecto de "levantar" el icono */
+    box-shadow: none !important; /* <--- MUY IMPORTANTE: Esto elimina CUALQUIER sombra al hacer hover */
+}
+
+/* Añade esto en tu styles.css, quizás en una nueva sección como "Estilos de PequeSwap" */
+
+.pequeswap-steps-section .card {
+  max-width: 550px; /* <--- Ajusta este valor para el ancho deseado de estas cards específicas */
+  /* No necesitamos margin-left/right: auto aquí porque .card general ya los tiene */
+}
+
+/* Asegúrate que la regla .como-funciona-icono y su hover estén presentes y sean correctas */
+/* Tal como lo discutimos: */
+.como-funciona-icono {
+    width: 100px;
+    height: auto;
+    border: none;
+    padding: 0;
+    border-radius: 0 !important;
+    transition: transform 0.3s ease-in-out;
+}
+
+.como-funciona-icono:hover {
+    transform: translateY(-5px);
+    box-shadow: none !important; /* Esto anula cualquier sombra inesperada */
+}
+
+/* También tus otras reglas de botones y cards deberían estar así: */
+/* Botones */
+.btn {
+  padding: 10px 30px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px; /* O el valor que desees para las esquinas no redondeadas */
+}
+
+/* Tu estilo para btn-primary (ahora amarillo) */
+.btn-primary {
+  background-color: var(--yellow-button-color);
+  border-color: var(--yellow-button-color);
+  color: var(--dark-color);
+}
+.btn-primary:hover {
+  background-color: #E6CA71;
+  border-color: #E6CA71;
+  color: var(--dark-color);
+}
+
+/* Tu estilo para el btn-custom-yellow (si sigues usándolo, o puedes eliminarlo si solo usas btn-primary) */
+.btn-custom-yellow {
+  background-color: #FADB79;
+  border-color: #FADB79;
+  color: var(--dark-color);
+}
+.btn-custom-yellow:hover {
+  background-color: #E6CA71;
+  border-color: #E6CA71;
+}
+
+/* Regla general .card, sin max-width específico para no afectar a todas */
+.card {
+  border: none;
+  /* SIN MAX-WIDTH AQUÍ para que solo .pequeswap-steps-section .card lo controle */
+  border-radius: 8px; /* O el valor que prefieras para las cards generales */
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  /* margin-left: auto; */ /* Esto debería estar en .pequeswap-steps-section .card si solo las afecta */
+  /* margin-right: auto; */ /* Idem */
+}
+
+/* PARA CENTRAR LAS CARDS DE PEQUESWAP ESPECÍFICAMENTE DENTRO DE SUS COLUMNAS */
+.pequeswap-steps-section .col-lg-6 .card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos específicos para las cards de la sección PequeSwap */
+.pequeswap-steps-section .card {
+    max-width: none !important; /* <--- CRUCIAL: Anula cualquier max-width heredado, permitiendo el "tamaño normal" de la columna */
+    margin-left: 0 !important;   /* <--- Anula el margin:auto para pegarlas a la izquierda de la columna */
+    margin-right: 0 !important;  /* <--- Anula el margin:auto para pegarlas a la derecha de la columna */
+    /* Esto permite que la tarjeta ocupe el ancho total de su columna (col-lg-6) */
+}
+
+/* SLIDER LOGOS */
+
+.brand-slider-section {
+    background-color: #F8F4E9; /* Un color de fondo para esta sección si la quieres diferente */
+    /* Otros estilos de padding si los necesitas */
+    padding: 60px 0; /* Ajusta el padding si lo deseas */
+}
+
+.brand-slider-container {
+    width: 100%;
+    overflow: hidden; /* Esto es para recortar el contenido que se sale, creando el efecto de "banda" */
+    white-space: nowrap; /* Asegura que los logos no salten de línea */
+    padding: 20px 0; /* Padding vertical para la banda si lo necesitas */
+    box-shadow: inset 0 0 0px rgba(0,0,0,0.05); /* Sombra sutil interna para el efecto de "banda" */
+}
+
+.brand-slider {
+    display: inline-block; /* Permite que el elemento ocupe solo el ancho de su contenido */
+    animation: slideBrands 30s linear infinite; /* Nombre de la animación, duración, tipo y que sea infinita */
+}
+
+.brand-slider img {
+    height: 60px; /* Ajusta la altura de los logos */
+    margin: 0 40px; /* Espacio horizontal entre logos */
+    filter: grayscale(100%); /* Opcional: Hacer los logos grises para un look más corporativo */
+    opacity: 0.7; /* Opcional: Reducir la opacidad */
+    transition: all 0.3s ease-in-out; /* Opcional: Transición para hover */
+}
+
+.brand-slider img:hover {
+    filter: grayscale(0%); /* Opcional: Color al pasar el mouse */
+    opacity: 1; /* Opcional: Opacidad completa al pasar el mouse */
+}
+
+/* Definición de la animación de movimiento */
+@keyframes slideBrands {
+    0% {
+        transform: translateX(0%); /* Empieza en la posición original */
+    }
+    100% {
+        transform: translateX(-50%); /* Se mueve el 50% de su ancho hacia la izquierda */
+        /* Si has duplicado los logos, 50% es la cantidad perfecta para que el loop sea continuo */
+    }
+}
+
+/* 13. FOOTER PERSONALIZADO */
+
+.site-footer {
+  background-color: var(--dark-color); /* Tu color de fondo oscuro para el footer */
+  color: white; /* Color de texto general para el footer */
+  padding: 80px 0 40px; /* Padding superior, inferior y lateral */
+  position: relative; /* Para posibles fondos o efectos */
+}
+
+/* Logo del footer */
+.site-footer .footer-logo {
+  max-width: 150px;
+  filter: brightness(0) invert(1); /* Mantiene el logo blanco por defecto */
+  transition: filter 0.3s ease-in-out; /* Añade una transición para el filtro si lo quitas en hover */
+}
+
+.site-footer .footer-logo:hover { /* <--- AÑADE ESTA NUEVA REGLA */
+    box-shadow: none !important; /* <--- Esto elimina cualquier sombra al hacer hover */
+    filter: none !important; /* <--- Opcional: Esto lo haría volver a su color original al hacer hover */
+    /* transform: scale(1.05); */ /* Opcional: Puedes añadir un ligero scale si quieres que se "levante" */
+}
+
+/* Texto general del footer */
+.site-footer .footer-text {
+  color: rgba(255, 255, 255, 0.7); /* Un blanco más suave para el texto general */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Títulos de las columnas del footer (ej. Secciones) */
+.site-footer .footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase; /* Si quieres que estén en mayúsculas */
+}
+
+/* Enlaces de las listas del footer */
+.site-footer .footer-links li a {
+  color: rgba(255, 255, 255, 0.7); /* Color de los enlaces */
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 10px; /* Espacio entre los ítems de la lista */
+  display: block; /* Para que margin-bottom funcione bien */
+  transition: color 0.2s ease-in-out;
+}
+
+.site-footer .footer-links li a:hover {
+  color: var(--yellow-button-color); /* Color de hover para los enlaces */
+}
+
+/* Formulario Newsletter */
+.site-footer .footer-newsletter .form-control {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente para el input */
+  border: px solid rgba(255, 255, 255, 0.3);
+  color: white; /* Color del texto dentro del input */
+  padding-left: 20px;
+  height: 45px; /* Altura del input */
+}
+
+.site-footer .footer-newsletter .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Color del placeholder */
+}
+
+.site-footer .footer-newsletter .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--yellow-button-color);
+  box-shadow: none;
+}
+
+.site-footer .footer-newsletter .btn {
+  background-color: var(--yellow-button-color); /* Botón del newsletter amarillo */
+  border-color: var(--yellow-button-color);
+  color: var(--dark-color); /* Texto del botón oscuro */
+  border-radius: 0 50px 50px 0; /* Solo redondez en la derecha */
+  padding: 0 20px; /* Padding del botón */
+}
+
+.site-footer .footer-newsletter .btn:hover {
+  background-color: #E6CA71; /* Hover del botón amarillo */
+  border-color: #E6CA71;
+}
+
+.site-footer .footer-newsletter .btn i {
+    font-size: 1.2rem; /* Tamaño del icono de flecha */
+}
+
+/* Redes Sociales */
+.site-footer .footer-social-icons .social-icon {
+  color: white; /* Color de los iconos sociales */
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  margin: 0 8px; /* Espacio entre iconos */
+  transition: color 0.2s ease-in-out;
+}
+
+.site-footer .footer-social-icons .social-icon:hover {
+  color: var(--yellow-button-color); /* Hover de iconos sociales */
+}
+
+/* Divisor horizontal */
+.site-footer .footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Info inferior (dirección y copyright) */
+.site-footer .footer-info {
+  color: rgba(255, 255, 255, 0.5); /* Color de texto más suave */
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Media Queries para responsividad del footer */
+@media (max-width: 991px) { /* Para tablets y móviles (md y sm) */
+  .site-footer .col-lg-4 {
+    text-align: center !important; /* Centra la primera columna en pantallas más pequeñas */
+  }
+  .site-footer .footer-newsletter {
+    max-width: 350px; /* Limita el ancho del form en móvil */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .site-footer .footer-social-icons {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) { /* Para móviles (sm) */
+  .site-footer .col-md-4,
+  .site-footer .col-sm-6 {
+    text-align: center !important; /* Centra las columnas en móviles */
+    margin-bottom: 25px; /* Espacio entre columnas apiladas */
+  }
+  .site-footer .footer-links {
+    max-width: 200px; /* Limita el ancho de las listas en móvil para que se centren */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .site-footer .footer-divider {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+/* Estilos para el Footer con fondo de ondas */
+.footer-with-wave-background {
+    background-color: none; /* Tu color de fondo oscuro para el footer */
+    background-image: url('Images/footer%20background.png'); 
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* Las ondas ocuparán el 100% del ancho. Ajusta a "cover" si prefieres que no se estiren. */
+    background-position: top center; /* Las ondas suelen estar en la parte superior para crear ese efecto de separación. */
+    /* Asegúrate de que el padding-top de tu footer sea suficiente para que las ondas se vean bien */
+    padding-top: 100px; /* **AJUSTA ESTE VALOR**: Aumenta si las ondas no se ven completas o si necesitas más espacio para la forma. */
+    position: 64px; /* Asegura que la imagen de fondo se comporte bien si hay otros elementos */
+    z-index: 1; /* Si hay elementos superpuestos con la sección anterior */
+}
+
+
+
+/* Estilos para la sección de FAQ */
+
+/* Color de fondo para las pestañas de FAQ cuando están cerradas (por defecto) */
+.accordion-button {
+  background-color: #F8F4E9; /* Fondo blanco cuando está cerrado */
+  color: var(--dark-color); /* Color de texto oscuro */
+  box-shadow: none; /* Eliminar cualquier sombra por defecto de Bootstrap */
+}
+
+/* Color de fondo para las pestañas de FAQ cuando están ABIERTAS */
+.accordion-button:not(.collapsed) {
+  background-color: #8FBCE4; /* Fondo amarillo cuando está abierto */
+  color: var(--dark-color); /* Texto oscuro para que contraste con el amarillo */
+  box-shadow: none; /* Asegura que no tenga sombra */
+}
+
+/* Color de hover para las pestañas de FAQ */
+.accordion-button:hover {
+  background-color: #8FBCE4; /* Un amarillo un poco diferente al pasar el mouse */
+  color: var(--dark-color);
+}
+
+/* Estilos para el icono de flecha del acordeón */
+.accordion-button::after {
+  filter: brightness(0) invert(0); /* Asegura que la flecha sea oscura por defecto si el fondo es claro */
+}
+
+/* Color de la flecha cuando la pestaña está abierta (si tu flecha cambia de color con el background) */
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(0); /* Asegura que la flecha siga siendo oscura sobre el amarillo */
+}
+
+/* Opcional: Eliminar el borde superior de los ítems del acordeón si se ve raro */
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: var(--bs-accordion-border-radius);
+    border-top-right-radius: var(--bs-accordion-border-radius);
+    border-top: none; /* Elimina borde superior si está visible */
+}
+
+/* Estilos para el enlace "Centro de Ayuda" en FAQs */
+.faqs-section .p-custom a { /* Asegura que solo afecte al enlace dentro de la sección FAQ */
+    color: #2B2B2B; /* Color amarillo */
+    text-decoration: underline; /* Opcional: Quita el subrayado si no lo quieres */
+    transition: color 0.3s ease-in-out; /* Suaviza el cambio de color al hacer hover */
+}
+
+.faqs-section .p-custom a:hover {
+    color: #EE7568; /* Un amarillo ligeramente diferente para el hover, consistente con otros hovers */
+    text-decoration: underline; /* Opcional: Subraya al hacer hover */
+}
+
+
+/* Estilos para la sección de FAQ */
+.faqs-section {
+    background-color:none; /* Color de fondo si la imagen no carga o no cubre todo */
+    background-image: url('Images/FAQ-BACKGROUND-DESKTOP.png'); /* **IMPORTANTE: Cambia 'Images/Fondo-Ondas-FAQ-Amarillo.png' por la ruta real de tu imagen de fondo con ondas** */
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* La imagen ocupará el 100% del ancho y su altura se ajustará. Ideal para ondas que deben estirarse horizontalmente. */
+    /* Si las ondas están en la parte superior del fondo, usa background-position: top center; */
+    background-position: top center;
+    padding-top: 100px; /* Mantén tu padding-top original si aplica */
+    padding-bottom: 100px; /* Mantén tu padding-bottom original si aplica */
+    /* Otras reglas que ya tenías para .faqs-section */
+}
+
+/* Si las ondas se distorsionan, prueba con "cover" y ajusta la posición: */
+/* background-size: cover; */
+/* background-position: center bottom; /* O center top, si las ondas están arriba */
+
+
+
+
+/* Puedes añadir más media queries para otros breakpoints si lo necesitas */
+@media (max-width: 480px) {
+  .faqs-section {
+    /* background-image: url('Images/otra-imagen-para-moviles-muy-pequenos.png'); */
+  }
+}
+
+/* PEQUEUNIVERSOS*/
+
+.pequeniversos-section {
+    padding: 80px 0;
+    background: none;
+    position: relative;
+}
+
+.pequeniversos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pequeniversos-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pequeniversos-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.pequeniversos-header p {
+    color: #bdc3c7;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.pequeniversos-tabs {
+    background: #f8f9fa;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.pequeniversos-tabs .tabs-header {
+    display: flex;
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.pequeniversos-tabs .universe-features {
+    list-style: none;
+    margin: 25px 0;
+    padding-left: 0; /* <--- ASEGURA ESTA LÍNEA */
+}
+
+.pequeniversos-tabs .tab-button {
+    flex: 1;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pequeniversos-tabs .tab-button.active {
+    color: #2c3e50;
+}
+
+.pequeniversos-tabs .tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 3px 3px 0 0;
+}
+
+.pequeniversos-tabs .tab-button:hover {
+    background: #f8f9fa;
+    color: #2c3e50;
+}
+
+.pequeniversos-tabs .tab-content {
+    display: none;
+    padding: 50px 40px;
+    min-height: 400px;
+}
+
+.pequeniversos-tabs .tab-content.active {
+    display: block;
+}
+
+.pequeniversos-tabs .universe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    height: 100%;
+}
+
+.pequeniversos-tabs .universe-info h3 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.pequeniversos-tabs .universe-info p {
+    color: #6c757d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.pequeniversos-tabs .universe-features {
+    list-style: none;
+    margin: 25px 0;
+    text-align: left; 
+}
+
+.pequeniversos-tabs .universe-features li {
+    color: #6c757d;
+    margin: 8px 0;
+    padding-left: 2px;
+    position: relative;
+}
+
+
+.pequeniversos-tabs .cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+}
+
+.pequeniversos-tabs .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+}
+
+.pequeniversos-tabs .universe-image {
+    text-align: center;
+    position: relative;
+}
+
+.pequeniversos-tabs .universe-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.pequeniversos-tabs .universe-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Colores específicos para cada universo */
+.pequeniversos-tabs .creador { --color: #ff6b6b; }
+.pequeniversos-tabs .cientifico { --color: #4ecdc4; }
+.pequeniversos-tabs .verde { --color: #95d5b2; }
+.pequeniversos-tabs .gourmet { --color: #ffd93d; }
+
+.pequeniversos-tabs .tab-button.creador.active::after { background: #ff6b6b; }
+.pequeniversos-tabs .tab-button.cientifico.active::after { background: #4ecdc4; }
+.pequeniversos-tabs .tab-button.verde.active::after { background: #95d5b2; }
+.pequeniversos-tabs .tab-button.gourmet.active::after { background: #ffd93d; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pequeniversos-section {
+        padding: 60px 0;
+    }
+    
+    .pequeniversos-header h2 {
+        font-size: 2rem;
+    }
+
+    .pequeniversos-tabs .tabs-header {
+        flex-wrap: wrap;
+    }
+
+    .pequeniversos-tabs .tab-button {
+        flex: 1 1 50%;
+        font-size: 0.8rem;
+        padding: 12px 15px;
+    }
+
+    .pequeniversos-tabs .tab-content {
+        padding: 30px 20px;
+    }
+
+    .pequeniversos-tabs .universe-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .pequeniversos-tabs .universe-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .pequeniversos-tabs .universe-image {
+        order: -1;
+    }
+
+    .pequeniversos-tabs .universe-image img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pequeniversos-container {
+        padding: 0 15px;
+    }
+
+    .pequeniversos-tabs .tab-button {
+        flex: 1 1 100%;
+        font-size: 0.7rem;
+        padding: 10px;
+    }
+
+    .pequeniversos-tabs .universe-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .pequeniversos-tabs .universe-image img {
+        height: 200px;
+    }
+}
+
+/* Estilos para la versión Oscura Personalizada de la sección PequeUniversos */
+.pequeniversos-dark-theme {
+    background-color: var(--light-color); /* Fondo de toda la sección color crema */
+    /* background-image: none; /* Eliminar si la versión clara tiene una imagen de fondo */
+    /* padding y otras propiedades de la sección se mantienen desde .section-spacing */
+}
+
+/* Título principal de la sección (ej. "Conoce los PequeUniversos") */
+.pequeniversos-dark-theme .pequeniversos-header h2 {
+    color: var(--dark-color); /* Título principal oscuro */
+}
+
+/* Subtítulo o párrafo principal de la sección */
+.pequeniversos-dark-theme .pequeniversos-header p {
+    color: var(--dark-color); /* Subtítulo oscuro */
+}
+
+/* Fondo de los rectángulos de las pestañas (todo el contenedor de tabs) */
+.pequeniversos-dark-theme .pequeniversos-tabs {
+    background: var(--dark-color); /* Fondo del rectángulo de las pestañas a color oscuro */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); /* Ajusta la sombra si es necesario */
+    /* Otras propiedades de borde-radius, overflow, etc. se heredan o se definen si es necesario */
+}
+
+/* Fondo de los encabezados de las pestañas (donde están los botones "Universo Creador", etc.) */
+.pequeniversos-dark-theme .pequeniversos-tabs .tabs-header {
+    background: #4a4a4a; /* Un gris oscuro para el encabezado de las pestañas para diferenciarse ligeramente del fondo general de la tab */
+    border-bottom: 1px solid #666666; /* Borde más claro para contraste */
+}
+
+/* Color de texto de los botones de pestaña (inactivos) */
+.pequeniversos-dark-theme .pequeniversos-tabs .tab-button {
+    color: #cccccc; /* Texto de botón inactivo gris claro */
+}
+
+/* Color de texto de los botones de pestaña (activos) */
+.pequeniversos-dark-theme .pequeniversos-tabs .tab-button.active {
+    color: white; /* Texto de botón activo blanco */
+}
+
+/* Color de texto de los títulos de cada universo (ej. "Universo Creador") dentro de las pestañas */
+.pequeniversos-dark-theme .pequeniversos-tabs .universe-info .plan-title-custom {
+    color: white; /* Título del universo en blanco */
+}
+
+/* Color de texto de los párrafos dentro de las pestañas */
+.pequeniversos-dark-theme .pequeniversos-tabs .universe-info p {
+    color: white; /* Párrafos en blanco */
+}
+
+/* Color de texto de los elementos de lista (features) dentro de las pestañas */
+.pequeniversos-dark-theme .pequeniversos-tabs .universe-features li {
+    color: white; /* Elementos de lista en blanco */
+}
+
+/* Color de los íconos de beneficios dentro de las listas de features */
+.pequeniversos-dark-theme .icon-beneficio {
+    color: var(--yellow-button-color); /* Íconos en amarillo para contraste */
+}
+
+/* Ajustes para el hover de los botones de pestaña en el tema oscuro */
+.pequeniversos-dark-theme .pequeniversos-tabs .tab-button:hover {
+    background: #666666; /* Un gris más claro para el hover */
+    color: white; /* Texto de hover en blanco */
+}
+
+
+/* ... el resto de tu CSS ... */
+
+/* ============================== */
+/* CUSTOM HELPER CLASSES */
+/* ============================== */
+
+/* ============================== */
+/* CUSTOM HELPER CLASSES */
+/* ============================== */
+
+/* TITULOS */
+.h1-custom {
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-color);
+}
+
+.h2-custom {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-color);
+}
+
+.h3-custom {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--dark-color);
+}
+
+.h4-custom {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+
+
+/* Estilos para el precio en la sección Hero */
+.hero-price {
+    font-size: 3.1rem; /* Ajusta el tamaño de la fuente para que sea grande */
+    font-weight: 700; /* Para que sea negrita */
+    line-height: 1.2; /* Ajusta el interlineado si es necesario */
+    color: white; /* Asegura que el color del texto sea blanco para contrastar con el fondo */
+    margin-bottom: 20px; /* Espacio debajo del precio */
+}
+
+.hero-price small {
+    font-size: 1.8rem; /* Ajusta el tamaño para "/mes" */
+    font-weight: 400; /* Puede ser más delgado que el número principal */
+    opacity: 0.8; /* Ligeramente transparente */
+} 
+/* PÁRRAFOS Y TEXTOS */
+.p-custom {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+/* SUBTITULOS INCOSOLATA */
+.font-inconsolata {
+  font-family: var(--font-subtitles); /* Esto usará 'Inconsolata' */
+}
+
+/* FONDOS E IMÁGENES */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-overlay-light {
+  background-color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(5px);
+}
+
+.bg-overlay-dark {
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+.img-rounded {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-dark-bg {
+  background-color: #F8F4E9; /* Se mantiene tu color oscuro como fallback */
+  background-image: url('Images/Suscripcion+Kits-Background.png'); /* Asegura que esta ruta sea correcta */
+  background-position: center -80px; /* CAMBIA ESTO: Ajusta el valor negativo para mover la imagen más arriba */
+  /* Puedes probar con -20px, -50px, -80px, o incluso porcentajes como 'center -10%' */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Mantén el color del texto como está si se ve bien sobre el fondo oscuro de la imagen */
+}
+
+/* Asegúrate de que los párrafos p.p-custom y h2.h2-custom dentro de esta sección sean blancos */
+.section-dark-bg .p-custom,
+.section-dark-bg .h2-custom {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .section-dark-bg {
+    background-position: center -20px; /* Un valor diferente para móviles */
+    /* O incluso ajustar background-size si es necesario: */
+    /* background-size: 150% auto; */
+  }
+}
+
+/* Estilos específicos para la fila de los planes de suscripción para un menor espacio */
+.section-dark-bg .row.g-4 { /* Apunta a la fila de los planes que tiene g-4 */
+    --bs-gutter-x: 0.75rem; /* **AJUSTA ESTE VALOR:** 0.75rem es 12px. Prueba con 0.5rem (8px) o 0.25rem (4px) para menos espacio horizontal. */
+    --bs-gutter-y: 1.5rem; /* **Mantenemos un buen espacio vertical** (equivale a mb-4 original), o ajusta si quieres menos. */
+}
+
+/* TEXTOS ADICIONALES */
+.text-uppercase-custom {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-muted-custom {
+  color: #6c757d;
+}
+
+/* ESPACIADOS */
+.section-spacing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-spacing-sm {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Estilos para los ítems de las listas de beneficios de los planes */
+.plan-benefits-list li {
+  margin-bottom: 8px; /* Ajusta este valor para más o menos espacio (ej. 5px, 10px, 12px) */
+  list-style: none; /* Esto quita los puntos por defecto del <ul> */
+    padding-left: 0; /* Asegura que la lista esté pegada al borde izquierdo de su contenedor */
+    margin-left: 0; /* También remueve cualquier margen que pueda tener */
+    text-align: left; /* Aunque los li suelen ser left por defecto, es bueno asegurarlo */
+}
+.plan-benefits-list li {
+    margin-bottom: 8px; /* Ajusta este valor para más o menos espacio (ej. 5px, 10px, 12px) */
+    text-align: left; /* Asegura el texto de cada item a la izquierda */
+}
+
+/* Opcional: Eliminar el margin-bottom del último ítem para que no agregue espacio extra abajo */
+.plan-benefits-list li:last-child {
+    margin-bottom: 0;
+}
+/* Opcional: Eliminar el margin-bottom del último ítem para que no agregue espacio extra abajo */
+.plan-benefits-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Añade esto en tu styles.css, por ejemplo, en la sección de HERO o CUSTOM HELPER CLASSES */
+.hero-no-bottom-padding {
+  padding-bottom: 0 !important;
+}
+
+/* ============================== */
+/* MEDIA QUERIES */
+/* ============================== */
+
+@media (max-width: 768px) {
+  /* Modificamos la regla general h1, pero luego sobrescribimos hero-title */
+  h1 { /* Esta regla afecta a todos los h1 por debajo de 768px, excepto hero-title */
+    font-size: 2.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  /* Agregamos una regla específica para el hero-title en pantallas pequeñas */
+  .hero-title {
+    font-size: 3rem !important; /* Puedes ajustar este tamaño para móviles */
+    line-height: 1.1; /* Ajustar el interlineado si es necesario */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .masonry__container {
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .masonry__container {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .masonry__container {
+    column-count: 1;
+  }
+}
